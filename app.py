@@ -1,6 +1,6 @@
 import streamlit as st
 import os
-from langchain.agents import create_csv_agent
+from langchain_experimental.agents import create_csv_agent
 from langchain.llms import OpenAI
 
 # Read API key from Streamlit secrets
