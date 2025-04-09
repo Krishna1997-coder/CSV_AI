@@ -13,11 +13,13 @@ def main():
     uploaded_file = st.file_uploader("Upload your CSV", type="csv")
     if uploaded_file:
         with st.spinner("Analyzing CSV..."):
-            agent = create_csv_agent(
-                OpenAI(temperature=0, openai_api_key=openai_api_key),
-                uploaded_file,
-                verbose=True
-            )
+           agent = create_csv_agent(
+    OpenAI(temperature=0, openai_api_key=openai_api_key),
+    uploaded_file,
+    verbose=True,
+    allow_dangerous_code=True
+)
+
 
         st.success("CSV Loaded. Ask me anything!")
         query = st.text_input("Ask a question about your data:")
